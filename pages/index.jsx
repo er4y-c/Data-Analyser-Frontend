@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const Page = () => {
-  return (
+const Page = () => (
     <div>Page</div>
-  )
-}
+  );
 
 export default Page;
