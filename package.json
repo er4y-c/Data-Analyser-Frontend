@@ -1,0 +1,35 @@
+{
+  "name": "data-analyser-frontend",
+  "version": "1.0.0",
+  "description": "Frontend of Hack the Insurance Competition project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/er4y-c/Data-Analyser-Frontend.git"
+  },
+  "author": "Eray Aynacı",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/er4y-c/Data-Analyser-Frontend/issues"
+  },
+  "homepage": "https://github.com/er4y-c/Data-Analyser-Frontend#readme",
+  "dependencies": {
+    "eslint": "^8.55.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^14.0.4",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6"
+  }
+}
