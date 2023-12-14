@@ -1,20 +1,30 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import ReportsMenu from './ReportsMenu';
 
 const Navbar = () => (
-    <nav className="bg-blue-600 px-4 flex justify-between items-center">
-      <Link href="/dashboard">
-        <p className="font-bold text-xl py-4">Data Analyser</p>
-      </Link>
-      <div className="relative">
+    <nav className="bg-blue-600 px-4 flex justify-between items-center text-sm font-semibold text-gray-200">
+      <div className="flex justify-between items-center">
+        <Link href="/dashboard">
+          <p className="font-bold text-2xl py-4">⌘</p>
+        </Link>
+        <div className="flex justify-center items-center ml-16 gap-x-4">
+          <Link href="#">Boards</Link>
+          <ReportsMenu />
+          <Link href="#">Datasets</Link>
+          <Link href="#">Notebooks</Link>
+          <Link href="#">Models</Link>
+        </div>
+      </div>
+      <div className="relative w-1/2 lg:w-1/3">
         <input
           type="text"
-          placeholder="Ara..."
-          className="bg-white text-blue-500 border-2 border-blue-500 p-2 rounded-md pl-10 w-2/3 lg:w-full"
+          placeholder="Search"
+          className="bg-blue-800 text-gray-200 placeholder:text-gray-200 p-2 rounded-md pl-10 w-2/3 lg:w-full focus:outline-none"
         />
-        <div className="absolute top-2 left-2 text-gray-400">
-          <Image src="/icons/search.svg" width={25} height={25} alt="Search icon" />
+        <div className="absolute top-2 left-2">
+          <Image src="/icons/search.png" width={25} height={25} alt="Search icon" />
         </div>
       </div>
       <div className="flex items-center space-x-4">
