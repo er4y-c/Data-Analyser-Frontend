@@ -5,4 +5,12 @@ export const data_services = {
         const response = await api.get('/get_data');
         return response.data;
     },
+    upload_csv_excel_file: async (file) => {
+        const response = await api.post('/data-connector/upload', file, {
+        headers: {
+            'Content-Type': 'multipart/form-data',
+        },
+    });
+        return response.data;
+    },
 }

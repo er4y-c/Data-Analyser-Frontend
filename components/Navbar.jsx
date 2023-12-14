@@ -1,9 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Navbar = () => (
     <nav className="bg-blue-600 px-4 flex justify-between items-center">
-      <p className="font-bold text-xl py-4">Data Analyser</p>
+      <Link href="/dashboard">
+        <p className="font-bold text-xl py-4">Data Analyser</p>
+      </Link>
       <div className="relative">
         <input
           type="text"
@@ -15,9 +18,9 @@ const Navbar = () => (
         </div>
       </div>
       <div className="flex items-center space-x-4">
-        <div>
+        <Link href="/dashboard/data-connector">
           <Image src="/icons/connection.svg" width={25} height={25} alt="Data Source Management icon" />
-        </div>
+        </Link>
         <div>
           <Image src="/icons/notification.svg" width={25} height={25} alt="Notification icon" />
         </div>

@@ -6,7 +6,8 @@ const IconButton = ({
     src,
     width = 20,
     height = 20,
-    alt, label,
+    alt,
+    label,
     className,
     isDisable,
     ...props }) => (

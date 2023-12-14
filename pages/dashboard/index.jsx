@@ -27,7 +27,7 @@ const Dashboard = () => {
 
   return (
     <DashboardContainer>
-      <p className="text-2xl text-gray-800">Welcome back</p>
+      <p className="text-2xl text-gray-800 m-16">Welcome back</p>
       <ChartBox
         title="Total Users"
         description="This report includes all user data"
