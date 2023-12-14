@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   useReactTable,
   getCoreRowModel,
@@ -46,7 +46,7 @@ const fuzzySort = (rowA, rowB, columnId) => {
 }
 
 const DataTable = ({ columns, data }) => {
-  const finalData = useMemo(() => data?.results, [data?.results])
+  const finalData = useMemo(() => data, [data])
   const finalColumn = useMemo(() => columns, [columns])
   const [columnFilters, setColumnFilters] = useState(
     [],
@@ -78,16 +78,8 @@ const DataTable = ({ columns, data }) => {
     getFacetedMinMaxValues: getFacetedMinMaxValues(),
    })
 
-  useEffect(() => {
-    if (table.getState().columnFilters[0]?.id === 'main.symbol') {
-      if (table.getState().sorting[0]?.id !== 'main.symbol') {
-        table.setSorting([{ id: 'main.symbol', desc: false }])
-      }
-    }
-  }, [table])
-
   return (
-    <div className="shadow-md overflow-auto border-b border-gray-200 sm:rounded-lg">
+    <div className="shadow-md overflow-auto border-b border-gray-200 sm:rounded-lg p-6">
       <div>
         <DebouncedInput
           value={globalFilter ?? ''}
@@ -99,7 +91,7 @@ const DataTable = ({ columns, data }) => {
       <div className="h-2" />
       <table className="min-w-full divide-y divide-gray-200">
         <thead className="bg-gray-50">
-          {table && table.getHeaderGroups().map((headerGroup) => (
+          {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                   <th
@@ -152,6 +144,22 @@ const DataTable = ({ columns, data }) => {
               </tr>
             ))}
         </tbody>
+        <tfoot>
+          {table.getFooterGroups().map((footerGroup) => (
+            <tr key={footerGroup.id}>
+              {footerGroup.headers.map((header) => (
+                <th key={header.id}>
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(
+                        header.column.columnDef.footer,
+                        header.getContext(),
+                      )}
+                </th>
+              ))}
+            </tr>
+          ))}
+        </tfoot>
       </table>
       <div className="h-2" />
       <div className="flex items-center justify-between">

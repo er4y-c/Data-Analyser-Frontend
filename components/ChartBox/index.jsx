@@ -1,11 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import BoxHeader from './BoxHeader';
+import Header from './Header';
 
 const ChartBox = ({
     width = 96,
     height = 96,
+    title,
+    description,
     children,
     className,
 }) => {
@@ -13,10 +15,10 @@ const ChartBox = ({
     const currentHeight = `h-${height.toString()}`
 
     return (
-        <div className={classNames('rounded-md p-8 border border-gray-200 hover:border-blue-600', currentHeight, currentWidth, className)}>
-            <BoxHeader
-              title="Table Example"
-              description="This report includes all variant data"
+        <div className={classNames('rounded-md p-8 border border-gray-200 hover:border-blue-600 m-9', currentHeight, currentWidth, className)}>
+            <Header
+              title={title}
+              description={description}
             />
             {children}
         </div>

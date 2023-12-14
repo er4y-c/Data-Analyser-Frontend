@@ -10,17 +10,17 @@ const Header = ({ title, description }) => (
         </div>
         <div className="">
             <IconButton
-              src="/icons/edit.png"
+              src="/icons/edit.svg"
               className="rounded-full w-8 h-8"
               alt="Edit Button"
             />
             <IconButton
-              src="/icons/delete.png"
+              src="/icons/remove1.svg"
               className="rounded-full w-8 h-8"
               alt="Delete Button"
             />
             <IconButton
-              src="/icons/question.png"
+              src="/icons/info.svg"
               className="rounded-full w-8 h-8"
               alt="Help Button"
             />

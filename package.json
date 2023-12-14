@@ -21,7 +21,9 @@
   "homepage": "https://github.com/er4y-c/Data-Analyser-Frontend#readme",
   "dependencies": {
     "@radix-ui/themes": "^2.0.2",
+    "@tanstack/match-sorter-utils": "^8.8.4",
     "@tanstack/react-table": "^8.10.7",
+    "axios": "^1.6.2",
     "classnames": "^2.3.2",
     "eslint": "^8.55.0",
     "eslint-config-airbnb": "^19.0.4",
