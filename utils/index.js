@@ -32,3 +32,18 @@ export const panels = [
     href: '/dashboard/boards',
   },
 ]
+
+export const boards = [
+  {
+    id: 1,
+    title: 'Board 1',
+    icon: '/assets/sagligim-cepte-logo.svg',
+    description: 'Example board',
+  },
+  {
+    id: 2,
+    title: 'Board 2',
+    icon: '/assets/sagligim-cepte-logo.svg',
+    description: 'Example board 2',
+  },
+]

@@ -10,11 +10,11 @@ const Navbar = () => (
           <p className="font-bold text-2xl py-4">⌘</p>
         </Link>
         <div className="flex justify-center items-center ml-16 gap-x-4">
-          <Link href="#">Boards</Link>
+          <Link href="/dashboard/boards">Boards</Link>
+          <Link href="/dashboard/datasets">Datasets</Link>
+          <Link href="/dashboard/notebooks">Notebooks</Link>
+          <Link href="/dashboard/models">Models</Link>
           <ReportsMenu />
-          <Link href="#">Datasets</Link>
-          <Link href="#">Notebooks</Link>
-          <Link href="#">Models</Link>
         </div>
       </div>
       <div className="relative w-1/2 lg:w-1/3">
