@@ -16,6 +16,12 @@ const Boards = () => (
           icon={board.icon}
         />
       ))}
+      <BoardCard
+        title="Create new board"
+        description="Start a new board from scratch"
+        location="/dashboard/boards"
+        icon="/icons/create.png"
+      />
     </div>
   </DashboardContainer>
 );

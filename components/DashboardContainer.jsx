@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 const DashboardContainer = ({ children }) => (
   <div>
     <Navbar />
-    <div className="mx-8">{ children }</div>
+    <div className="mx-8 lg:mx-16">{ children }</div>
   </div>
 );
 

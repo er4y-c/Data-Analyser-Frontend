@@ -39,11 +39,13 @@ export const boards = [
     title: 'Board 1',
     icon: '/assets/sagligim-cepte-logo.svg',
     description: 'Example board',
+    isPinned: true,
   },
   {
     id: 2,
     title: 'Board 2',
     icon: '/assets/sagligim-cepte-logo.svg',
     description: 'Example board 2',
+    isPinned: true,
   },
 ]

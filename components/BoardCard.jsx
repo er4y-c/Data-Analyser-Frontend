@@ -6,12 +6,12 @@ import { Card, Inset } from '@radix-ui/themes';
 const BoardCard = ({ icon, title, description, location }) => (
   <Card size={4} className="py-2 rounded-2xl">
     <Link href={location} className="flex flex-col w-48 h-48 gap-y-8">
-      <Inset clip="padding-box" side="top" pb="current">
+      <Inset clip="padding-box" side="top" pb="current" className="mx-auto">
         <Image
           src={icon}
-          alt="Bold typography"
-          width={140}
-          height={140}
+          alt="Board icon"
+          width={90}
+          height={90}
         />
       </Inset>
       <div className="flex flex-col justify-center items-start px-4">

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import DashboardContainer from '../../components/DashboardContainer';
-import DataTable from '../../components/DataTable';
-import ChartBox from '../../components/ChartBox';
-import Loading from '../../components/Loading';
-import { data_services } from '../../services/data';
+import Boards from '../../components/MainPageSections/Boards';
+import Notebooks from '../../components/MainPageSections/Notebooks';
+import Reports from '../../components/MainPageSections/Reports';
+import Models from '../../components/MainPageSections/Models';
 
 const Dashboard = () => {
   const [data, setData] = useState([]);
@@ -11,30 +11,16 @@ const Dashboard = () => {
   const [columns, setColumns] = useState([]);
 
   useEffect(() => {
-    data_services.get_all_data()
-    .then((res) => {
-      setData(res?.results)
-      const keys = Object.keys(res.results[0]).map((key) =>
-        ({ Header: key, accessor: key, id: key }));
-      setColumns(keys);
-      setLoading(false);
-    })
-    .catch(() => {
-      setData([]);
-      setLoading(false);
-    });
+    console.log('rendering');
   }, []);
 
   return (
     <DashboardContainer>
-      <p className="text-2xl text-gray-800 m-16">Welcome back</p>
-      <ChartBox
-        title="Total Users"
-        description="This report includes all user data"
-      >
-        { loading && <Loading /> }
-        <DataTable columns={columns} data={data} />
-      </ChartBox>
+      <p className="text-2xl text-gray-800 my-16">Welcome back</p>
+      <Boards />
+      <Reports />
+      <Notebooks />
+      <Models />
     </DashboardContainer>
   );
 }
