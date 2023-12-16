@@ -10,6 +10,7 @@ const ChartBox = ({
     description,
     children,
     className,
+    noButtons = false,
 }) => {
     const currentWidth = `w-${width.toString()}`
     const currentHeight = `h-${height.toString()}`
@@ -19,6 +20,7 @@ const ChartBox = ({
             <Header
               title={title}
               description={description}
+              noButtons={noButtons}
             />
             {children}
         </div>

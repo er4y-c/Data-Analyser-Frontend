@@ -11,13 +11,13 @@ export const panels = [
     icon: '/icons/line-icon.png',
     title: 'Visualize',
     description: 'Visualize your filtred data using charts and graphs',
-    href: '/dashboard/boards',
+    href: '/dashboard/visualize',
   },
   {
     icon: '/icons/table-icon.png',
     title: 'Data Table',
     description: 'View your data in a table format and filter and sort it using multiple options',
-    href: '/dashboard/boards',
+    href: '/dashboard/datatable',
   },
   {
     icon: '/icons/ml-icon.png',

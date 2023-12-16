@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useParams } from 'next/navigation';
 import DashboardContainer from '../../../components/DashboardContainer'
 import Loading from '../../../components/Loading';
 import DataTable from '../../../components/DataTable';
 import ChartBox from '../../../components/ChartBox';
 import { data_services } from '../../../services/data';
+import { VisualizeContext } from '../../../context/visualize';
 
 const DashboardPage = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [columns, setColumns] = useState([]);
   const { dashboardId } = useParams();
+  // const { chartData, selectedColumns } = useContext(VisualizeContext);
+
   useEffect(() => {
     data_services.get_all_data()
     .then((res) => {
