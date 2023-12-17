@@ -14,8 +14,6 @@ const Navbar = () => {
         </Link>
         <div className="flex justify-center items-center ml-16 gap-x-4">
           <Link href="/dashboard/boards">Boards</Link>
-          <Link href="/dashboard/datasets">Datasets</Link>
-          <Link href="/dashboard/notebooks">Notebooks</Link>
           <Link href="/dashboard/models">Models</Link>
           <ReportsMenu />
         </div>
