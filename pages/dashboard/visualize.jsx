@@ -7,7 +7,7 @@ import SelectColumns from '../../components/VisualizeSection/SelectColumns';
 import GenerateButton from '../../components/VisualizeSection/GenerateButton';
 import { VisualizeContext } from '../../context/visualize';
 
-const visualize = () => {
+const Visualize = () => {
     const { chartData, selectedColumns, selectedSource } = useContext(VisualizeContext);
     const labels = selectedColumns.map((item) => item.value);
 
@@ -35,4 +35,4 @@ const visualize = () => {
   );
 };
 
-export default visualize;
+export default Visualize;

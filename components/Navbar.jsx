@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ReportsMenu from './ReportsMenu';
+import { AuthContext } from '../context/auth';
 
-const Navbar = () => (
+const Navbar = () => {
+  const { logout } = useContext(AuthContext);
+  return (
     <nav className="bg-blue-600 px-4 flex justify-between items-center text-sm font-semibold text-gray-200">
       <div className="flex justify-between items-center">
         <Link href="/dashboard">
@@ -37,8 +40,14 @@ const Navbar = () => (
         <div>
           <Image src="/icons/settings.svg" width={25} height={25} alt="Settings icon" />
         </div>
+        <div>
+          <button onClick={() => logout()}>
+            <Image src="/icons/logout.svg" width={25} height={25} alt="Logout icon" />
+          </button>
+        </div>
       </div>
     </nav>
   );
+}
 
 export default Navbar;

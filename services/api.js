@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Cookies from 'js-cookie'
 
 export const api = axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
@@ -8,7 +9,7 @@ export const api = axios.create({
     },
   })
 
-/*  api.interceptors.request.use(
+  api.interceptors.request.use(
     (config) => {
       const myConfig = config
       const token = Cookies.get('token')
@@ -26,9 +27,8 @@ export const api = axios.create({
       if (error?.response?.status === 401) {
         Cookies.remove('token')
         Cookies.remove('user-info')
-        location.reload()
+        window.location.reload()
       }
-      return Promise.reject({ ...error })
+      return Promise.reject(new Error(error))
     },
   )
-    */
